@@ -33,10 +33,6 @@ module TaskHelpers
       settings[name]['settings']['index']['number_of_shards']
     end
 
-    def self.exists_alias(alias_name)
-      Elasticsearch::Model.client.indices.exists_alias(name: alias_name)
-    end
-
     def self.move_alias(alias_name, index_name)
       actions = [
           {add: {index: index_name, alias: alias_name}}
