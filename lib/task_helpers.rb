@@ -5,7 +5,7 @@ module TaskHelpers
     LOG = Logger.new(STDERR)
 
     def self.create_index(name=nil)
-      name ||= "#{Content::ES_INDEX_NAME}_#{Time.now.strftime('%Y%m%d%H%M%S%L')}"
+      name ||= "#{Content::ES_INDEX_NAME}_#{Time.now.strftime('%Y%m%d%H%M%S')}"
 
       mappings = {}
       [Comment, CommentThread].each do |model|
